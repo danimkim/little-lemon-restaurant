@@ -1,14 +1,12 @@
-import { useState } from "react";
-import "./App.css";
-import "./reset.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Global } from "@emotion/react";
+import { global } from "./styles/global";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
+      <Global styles={global} />
       <Header />
       <main></main>
       <Footer />
