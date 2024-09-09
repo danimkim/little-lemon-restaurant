@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
+import emotionNormalize from "emotion-normalize";
 
 export const global = css`
+  ${emotionNormalize}
   ul,
   li {
     margin: 0;
