@@ -2,25 +2,41 @@ import { Theme } from "@emotion/react";
 
 declare module "@emotion/react" {
   interface Theme extends IBreakpoint {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   }
 }
 
 interface IBreakpoint {
   breakpoint: {
-    small: string;
-    medium: string;
-    large: string;
+    xs: string;
+    md: string;
+    lg: string;
   };
 }
 
+interface IOrdinalNumbers {
+  primary?: string;
+  secondary?: string;
+}
+
+interface IColors {
+  main: IOrdinalNumbers;
+  sub: IOrdinalNumbers;
+  highlight: IOrdinalNumbers;
+}
+
 const breakpoint = {
-  small: "360px",
-  medium: "768px",
-  large: "1024px",
+  xs: "360px",
+  md: "768px",
+  lg: "1024px",
 };
 
 export const theme: Theme = {
   breakpoint,
+};
+
+const colors: IColors = {
+  main: { primary: "#495E57", secondary: "#F4CE14" },
+  sub: { primary: "#EE9972", secondary: "#FBDABB" },
+  highlight: { primary: "#EDEFEE", secondary: "#333333" },
 };
