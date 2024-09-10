@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -21,9 +21,12 @@
     "noFallthroughCasesInSwitch": true,
 
     /* absolute imports */
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
-      "src/*": ["./src/*"]
+      "@constants": ["constants"],
+      "@constants/*": ["constants/*"],
+      "@containers/*": ["containers/*/index"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
