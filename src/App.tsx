@@ -7,6 +7,7 @@ import { theme } from "./styles/theme";
 import { HeroSection } from "@containers/Hero";
 import Highlights from "@containers/Highlights";
 import Testimonials from "@containers/Testimonials";
+import About from "@containers/About";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <HeroSection />
           <Highlights />
           <Testimonials />
+          <About />
         </main>
         <Footer />
       </ThemeProvider>
