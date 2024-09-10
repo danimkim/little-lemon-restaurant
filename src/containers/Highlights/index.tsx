@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Button from "components/Button";
-import Card from "components/Highlights/Card";
+import { HighlightCard } from "components/Highlights";
 import Wrapper from "components/Wrapper";
 import Img from "@assets/greek-salad.jpg";
 
@@ -35,7 +35,7 @@ export default function HighlightsSection() {
         </HeadingWrapper>
         <div className="card-container">
           {mockData.map((card, idx) => (
-            <Card key={idx} data={card} />
+            <HighlightCard key={idx} data={card} />
           ))}
         </div>
       </ContentWrapper>

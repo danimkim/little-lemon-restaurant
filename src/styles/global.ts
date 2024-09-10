@@ -22,7 +22,7 @@ export const global = css`
 
   @font-face {
     font-family: "Markazi Text";
-    font-weight: 400;
+    font-weight: 500;
     src: url("/fonts/MarkaziText-Medium.ttf");
   }
 
@@ -46,6 +46,7 @@ export const global = css`
   ul,
   li,
   h1,
+  h2,
   h3,
   p,
   div,

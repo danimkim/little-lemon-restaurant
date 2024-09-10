@@ -61,11 +61,6 @@ const ImageContainer = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakpoint.lg}) {
     height: 230px;
-
-    & > img {
-      /* height: 100%;
-      margin-left: -20px; */
-    }
   }
 `;
 
