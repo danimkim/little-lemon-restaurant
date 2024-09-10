@@ -4,6 +4,7 @@ import { Global } from "@emotion/react";
 import { global } from "./styles/global";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./styles/theme";
+import { HeroSection } from "@containers/Hero";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <Global styles={global} />
       <ThemeProvider theme={theme}>
         <Header />
-        <main></main>
+        <main>
+          <HeroSection />
+        </main>
         <Footer />
       </ThemeProvider>
     </>

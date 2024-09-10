@@ -17,12 +17,12 @@ export default function Footer() {
       <ul>
         {FooterNavMenu.map((footerMenu: IFooterMenu) => {
           return (
-            <li>
+            <li key={footerMenu.id}>
               {footerMenu.name}
               <ul>
                 {footerMenu.children.map((menu) => {
                   return (
-                    <li>
+                    <li key={menu.id}>
                       <a href={menu.link}>{menu.name}</a>
                     </li>
                   );
