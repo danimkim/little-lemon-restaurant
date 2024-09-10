@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import Wrapper from "components/Wrapper";
+import Wrapper from "@components/Wrapper";
 import MainImage from "@assets/restaurant.jpg";
-import Button from "components/Button";
+import Button from "@components/Button";
 
 export default function Section() {
   return (

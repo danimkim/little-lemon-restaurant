@@ -1,6 +1,6 @@
 import { FooterNavMenu } from "@constants";
 import styled from "@emotion/styled";
-import Wrapper from "components/Wrapper";
+import Wrapper from "@components/Wrapper";
 import Photo from "@assets/restauranfood.jpg";
 
 interface IFooterMenu {

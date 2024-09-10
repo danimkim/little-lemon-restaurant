@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { TestimonialCard } from "components/Testimonials";
-import Wrapper from "components/Wrapper";
+import { TestimonialCard } from "@components/Testimonials";
+import Wrapper from "@components/Wrapper";
 import Avatar01 from "@assets/avatar01.jpg";
 import Avatar02 from "@assets/avatar02.jpg";
 import Avatar03 from "@assets/avatar03.jpg";

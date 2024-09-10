@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Wrapper from "components/Wrapper";
+import Wrapper from "@components/Wrapper";
 import Photo01 from "@assets/mario-and-adrian_a.jpg";
 import Photo02 from "@assets/mario-and-adrian_b.jpg";
 

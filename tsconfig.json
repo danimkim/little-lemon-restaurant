@@ -26,7 +26,10 @@
       "@constants": ["constants"],
       "@constants/*": ["constants/*"],
       "@containers/*": ["containers/*/index"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@router": ["router"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]

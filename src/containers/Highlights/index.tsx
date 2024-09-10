@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import Button from "components/Button";
-import { HighlightCard } from "components/Highlights";
-import Wrapper from "components/Wrapper";
+import Button from "@components/Button";
+import { HighlightCard } from "@components/Highlights";
+import Wrapper from "@components/Wrapper";
 import Img from "@assets/greek-salad.jpg";
 
 export default function HighlightsSection() {
