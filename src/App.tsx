@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Footer from "components/Footer";
 import { Global } from "@emotion/react";
 import { global } from "./styles/global";
 import { ThemeProvider } from "@emotion/react";
