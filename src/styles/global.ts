@@ -7,13 +7,13 @@ export const global = css`
   @font-face {
     font-family: "Karla";
     font-weight: 500;
-    src: url("public/fonts/Karla-Regular.ttf");
+    src: url("/fonts/Karla-Regular.ttf");
   }
 
   @font-face {
     font-family: "Markazi Text";
     font-weight: 400;
-    src: url("public/fonts/MarkaziText-Medium.ttf");
+    src: url("/fonts/MarkaziText-Medium.ttf");
   }
 
   html,
@@ -36,5 +36,6 @@ export const global = css`
 
   a {
     text-decoration: none;
+    color: initial;
   }
 `;

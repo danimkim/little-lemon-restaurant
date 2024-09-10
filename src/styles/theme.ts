@@ -1,7 +1,7 @@
 import { Theme } from "@emotion/react";
 
 declare module "@emotion/react" {
-  interface Theme extends IBreakpoint {
+  interface Theme extends IBreakpoint, IColors {
     [key: string]: any;
   }
 }
@@ -20,9 +20,11 @@ interface IOrdinalNumbers {
 }
 
 interface IColors {
-  main: IOrdinalNumbers;
-  sub: IOrdinalNumbers;
-  highlight: IOrdinalNumbers;
+  colors: {
+    main: IOrdinalNumbers;
+    sub: IOrdinalNumbers;
+    highlight: IOrdinalNumbers;
+  };
 }
 
 const breakpoint = {
@@ -31,12 +33,13 @@ const breakpoint = {
   lg: "1024px",
 };
 
-export const theme: Theme = {
-  breakpoint,
-};
-
-const colors: IColors = {
+export const colors = {
   main: { primary: "#495E57", secondary: "#F4CE14" },
   sub: { primary: "#EE9972", secondary: "#FBDABB" },
   highlight: { primary: "#EDEFEE", secondary: "#333333" },
+};
+
+export const theme: Theme = {
+  breakpoint,
+  colors,
 };
