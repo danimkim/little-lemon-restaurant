@@ -12,7 +12,7 @@ export default function Wrapper(props: IProps) {
 
 const Div = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoint.md}) {
-    max-width: 768px;
+    max-width: 740px;
     margin: 0 auto;
   }
 

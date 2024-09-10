@@ -5,6 +5,7 @@ import { global } from "./styles/global";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./styles/theme";
 import { HeroSection } from "@containers/Hero";
+import HighlightsSection from "@containers/HighlightsSection";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <main>
           <HeroSection />
+          <HighlightsSection />
         </main>
         <Footer />
       </ThemeProvider>

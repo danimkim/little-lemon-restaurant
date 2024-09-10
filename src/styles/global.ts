@@ -26,6 +26,12 @@ export const global = css`
     src: url("/fonts/MarkaziText-Medium.ttf");
   }
 
+  @font-face {
+    font-family: "Markazi Text";
+    font-weight: 600;
+    src: url("/fonts/MarkaziText-SemiBold.ttf");
+  }
+
   .headline-text {
     font-family: "Markazi Text";
   }
@@ -40,8 +46,13 @@ export const global = css`
   ul,
   li,
   h1,
+  h3,
   p,
-  div {
+  div,
+  dl,
+  dt,
+  dd,
+  article {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
