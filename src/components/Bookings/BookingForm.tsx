@@ -7,9 +7,12 @@ interface IFormData {
   occasion: string;
 }
 
-export default function BookingForm() {
-  const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+interface IProps {
+  availableTimes: string[];
+  onDateChange: (date: string) => void;
+}
 
+export default function BookingForm({ availableTimes, onDateChange }: IProps) {
   const initFormData = {
     "res-date": "",
     "res-time": "",
@@ -18,7 +21,6 @@ export default function BookingForm() {
   };
 
   const [formData, setFormData] = useState<IFormData>(initFormData);
-  const [times, setTimes] = useState(availableTimes);
 
   const handleFormChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -35,7 +37,7 @@ export default function BookingForm() {
         type="date"
         id="res-date"
         value={formData["res-date"]}
-        onChange={handleFormChange}
+        onChange={(e) => onDateChange(e.target.value)}
       />
       <label htmlFor="res-time">Choose time</label>
       <select
@@ -43,7 +45,7 @@ export default function BookingForm() {
         value={formData["res-time"]}
         onChange={handleFormChange}
       >
-        {times.map((time) => (
+        {availableTimes.map((time) => (
           <option key={time}>{time}</option>
         ))}
       </select>
