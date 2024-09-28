@@ -1,5 +1,5 @@
 import Layout from "@components/Layout";
-import BookingPage from "@pages/Booking";
+import BookingPage from "@pages/Bookings";
 import HomePage from "@pages/Home";
 import {
   createBrowserRouter,

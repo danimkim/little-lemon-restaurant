@@ -1,5 +1,6 @@
 import { NavMenu } from "@constants";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 interface INavMenu {
   id: number;
@@ -13,7 +14,7 @@ export default function Nav() {
       <MenuList>
         {NavMenu.map((menu: INavMenu) => (
           <MenuItem key={menu.id}>
-            <a href="#">{menu.name}</a>
+            <Link to={menu.link || "/"}>{menu.name}</Link>
           </MenuItem>
         ))}
       </MenuList>
