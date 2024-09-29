@@ -1,6 +1,6 @@
 import BookingForm from "@components/Bookings/BookingForm";
-import { availableTimes } from "@constants";
 import { useReducer } from "react";
+import { fetchAPI } from "./../utils/api";
 
 export type TAvailableTimes =
   | "17:00"
@@ -22,30 +22,36 @@ type TState = {
 // declare reducer
 const updateTimes = (state: TState, action: TAction) => {
   if (action.type === "UPDATE") {
-    return { ...state };
+    const date = new Date(action.payload);
+    const availableTimes = fetchAPI(date);
+    return { availableTimes };
   }
   return state;
 };
 
 export default function BookingPage() {
-  const initData = {
-    availableTimes,
+  const initializeTimes = () => {
+    const date = new Date();
+    const availableTimes = fetchAPI(date);
+    return { availableTimes };
   };
-
-  const initializeTimes = () => ({ availableTimes });
 
   const handleDateChange = (selectedDate: string) =>
     dispatch({ type: "UPDATE", payload: selectedDate });
 
-  const [state, dispatch] = useReducer(updateTimes, initData, initializeTimes);
+  const [state, dispatch] = useReducer(
+    updateTimes,
+    { availableTimes: [] },
+    initializeTimes
+  );
 
   return (
-    <div>
+    <>
       <h2>Reservation</h2>
       <BookingForm
         onDateChange={handleDateChange}
         availableTimes={state.availableTimes}
       />
-    </div>
+    </>
   );
 }

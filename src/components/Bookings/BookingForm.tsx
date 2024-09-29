@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-interface IFormData {
+export interface IFormData {
   "res-date": string;
   "res-time": string;
   guests: number;
@@ -13,8 +13,16 @@ interface IProps {
 }
 
 export default function BookingForm({ availableTimes, onDateChange }: IProps) {
+  const formatDate = useCallback((date: Date) => {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }, []);
+
   const initFormData = {
-    "res-date": "",
+    "res-date": formatDate(new Date()),
     "res-time": "",
     guests: 1,
     occasion: "Birthday",
@@ -25,7 +33,6 @@ export default function BookingForm({ availableTimes, onDateChange }: IProps) {
   const handleFormChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-      console.log(formData);
     },
     [formData]
   );
@@ -37,7 +44,10 @@ export default function BookingForm({ availableTimes, onDateChange }: IProps) {
         type="date"
         id="res-date"
         value={formData["res-date"]}
-        onChange={(e) => onDateChange(e.target.value)}
+        onChange={(e) => {
+          onDateChange(e.target.value);
+          handleFormChange(e);
+        }}
       />
       <label htmlFor="res-time">Choose time</label>
       <select

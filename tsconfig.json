@@ -30,7 +30,8 @@
       "@router": ["router"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"]
-    }
+    },
+    "esModuleInterop": true
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
 }
