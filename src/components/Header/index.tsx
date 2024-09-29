@@ -10,7 +10,13 @@ export default function Header() {
       <ContentWrapper>
         <ImageWrapper>
           <Link to="/">
-            <img src={Logo} alt="Little Lemon" />
+            <img
+              src={Logo}
+              alt="Little Lemon"
+              role="link"
+              tabIndex={0}
+              aria-label="Little Lemon Restaurant Website"
+            />
           </Link>
         </ImageWrapper>
         <Nav />
