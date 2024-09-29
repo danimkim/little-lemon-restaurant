@@ -1,7 +1,9 @@
-import BookingForm from "@components/Bookings/BookingForm";
-import { useCallback, useReducer, useState } from "react";
+import BookingForm, { IFormData } from "@components/Bookings/BookingForm";
+import { useCallback, useReducer } from "react";
 import { fetchAPI, submitAPI } from "./../utils/api";
 import { useNavigate } from "react-router-dom";
+import Wrapper from "@components/Wrapper";
+import styled from "@emotion/styled";
 
 export type TAvailableTimes =
   | "17:00"
@@ -19,13 +21,6 @@ export type TAction = {
 type TState = {
   availableTimes: string[];
 };
-
-export interface IFormData {
-  "res-date": string;
-  "res-time": string;
-  guests: number;
-  occasion: string;
-}
 
 // declare reducer
 const updateTimes = (state: TState, action: TAction) => {
@@ -52,23 +47,6 @@ export default function BookingPage() {
     { availableTimes: [] },
     initializeTimes
   );
-
-  const formatDate = useCallback((date: Date) => {
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
-  }, []);
-
-  const initFormData = {
-    "res-date": formatDate(new Date()),
-    "res-time": "",
-    guests: 1,
-    occasion: "Birthday",
-  };
-
-  const [formData, setFormData] = useState<IFormData>(initFormData);
   const navigate = useNavigate();
 
   const submitForm = useCallback((data: IFormData) => {
@@ -84,15 +62,19 @@ export default function BookingPage() {
   }, []);
 
   return (
-    <>
-      <h2>Reservation</h2>
+    <Container>
+      <h2>Reserve a table</h2>
       <BookingForm
         onDateChange={handleDateChange}
-        onFormChange={setFormData}
         availableTimes={state.availableTimes}
         onSubmit={submitForm}
-        formData={formData}
       />
-    </>
+    </Container>
   );
 }
+
+const Container = styled(Wrapper)`
+  @media (min-width: ${(props) => props.theme.breakpoint.md}) {
+    max-width: 400px;
+  }
+`;
