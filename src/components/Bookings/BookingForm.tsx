@@ -1,7 +1,7 @@
 import Button from "@components/Button";
 import styled from "@emotion/styled";
 import { useFormik } from "formik";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 interface IProps {
   availableTimes: string[];
@@ -45,8 +45,6 @@ export default function BookingForm({
     name: "",
     email: "",
   };
-
-  const [formData, setFormData] = useState<IFormData>(initFormData);
 
   const formik = useFormik({
     initialValues: initFormData,
