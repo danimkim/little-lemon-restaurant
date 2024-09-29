@@ -1,44 +1,30 @@
-import { useCallback, useState } from "react";
-
-export interface IFormData {
-  "res-date": string;
-  "res-time": string;
-  guests: number;
-  occasion: string;
-}
+import { IFormData } from "@pages/Bookings";
+import { useCallback } from "react";
 
 interface IProps {
   availableTimes: string[];
   onDateChange: (date: string) => void;
+  onFormChange: React.Dispatch<React.SetStateAction<IFormData>>;
+  onSubmit: (formData: IFormData) => void;
+  formData: IFormData;
 }
 
-export default function BookingForm({ availableTimes, onDateChange }: IProps) {
-  const formatDate = useCallback((date: Date) => {
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
-  }, []);
-
-  const initFormData = {
-    "res-date": formatDate(new Date()),
-    "res-time": "",
-    guests: 1,
-    occasion: "Birthday",
-  };
-
-  const [formData, setFormData] = useState<IFormData>(initFormData);
-
+export default function BookingForm({
+  availableTimes,
+  onDateChange,
+  onFormChange,
+  onSubmit,
+  formData,
+}: IProps) {
   const handleFormChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-      setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+      onFormChange((prev) => ({ ...prev, [e.target.id]: e.target.value }));
     },
     [formData]
   );
 
   return (
-    <form action="">
+    <form onSubmit={() => onSubmit(formData)}>
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
