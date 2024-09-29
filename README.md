@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Little Lemon Restaurant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./src/assets/Logo.svg" alt="Little Lemon Restaurant Logo"/>
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repo
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+git clone https://github.com/danimkim/little-lemon-restaurant.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install packages
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```
+yarn add
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Run the project
+
+```
+yarn start
+```
+
+# Little Lemon Restaurant
+
+<br><br>
+
+<p align="center">
+<img src="./src/assets/Logo.svg" alt="Little Lemon Restaurant Logo" margin="0 auto"/>
+</p>
+<br><br>
+
+Little Lemon Restaurant is a restaurant website with the restaurant's information and a table booking system.
+
+## Demo
+
+https://your-little-lemon-restaurant.vercel.app/
+
+<br>
+
+## Installation
+
+1. Clone the repo
+
+```
+git clone https://github.com/danimkim/little-lemon-restaurant.git
+```
+
+2. Install packages
+
+```
+yarn add
+```
+
+3. Run the project
+
+```
+yarn start
 ```
