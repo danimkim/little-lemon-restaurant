@@ -23,7 +23,7 @@ const fetchAPI = function (date: Date) {
   }
   return result;
 };
-const submitAPI = function (formData: IFormData) {
+const submitAPI = function (_formData: IFormData) {
   return true;
 };
 
