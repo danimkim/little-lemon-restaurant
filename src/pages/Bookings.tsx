@@ -50,11 +50,19 @@ export default function BookingPage() {
   const navigate = useNavigate();
 
   const submitForm = useCallback((data: IFormData) => {
+    if (localStorage.getItem(`booking-${data.email}`)) {
+      alert(
+        `Your booking made with the email "${data.email}" is already existed.`
+      );
+      return;
+    }
+
     if (confirm("Do you confirm this booking?")) {
       const res = submitAPI(data);
 
       if (res) {
         navigate("/booking/confirmed");
+        localStorage.setItem(`booking-${data.email}`, JSON.stringify(data));
       } else {
         alert("Something went wrong! Please try again.");
       }
