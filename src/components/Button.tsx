@@ -8,6 +8,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   height?: string;
   fontSize?: string;
   borderRadius?: string;
+  fontWeight?: string;
 }
 
 export default function Button(props: IProps) {
@@ -16,6 +17,7 @@ export default function Button(props: IProps) {
     height = "51",
     fontSize = "20",
     borderRadius = "10",
+    fontWeight = "800",
     children,
     ...attr
   } = props;
@@ -25,6 +27,7 @@ export default function Button(props: IProps) {
       height={height}
       fontSize={fontSize}
       borderRadius={borderRadius}
+      fontWeight={fontWeight}
       {...attr}
     >
       {children}
@@ -37,6 +40,7 @@ const ButtonStyle = styled.button<{
   height?: string;
   fontSize?: string;
   borderRadius?: string;
+  fontWeight?: string;
 }>`
   background-color: ${({ theme }) => theme.colors.main.secondary};
   color: ${({ theme }) => theme.colors.highlight.secondary};
@@ -47,6 +51,6 @@ const ButtonStyle = styled.button<{
     border-radius: ${({ borderRadius }) => borderRadius}px;
     color: ${({ theme }) => theme.colors.highlight.secondary};
     font-size: ${({ fontSize }) => fontSize}px;
-    font-weight: 800;
+    font-weight: ${({ fontWeight }) => fontWeight || 800};
   }
 `;

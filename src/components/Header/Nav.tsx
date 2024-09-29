@@ -1,5 +1,6 @@
 import { NavMenu } from "@constants";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 interface INavMenu {
   id: number;
@@ -13,7 +14,7 @@ export default function Nav() {
       <MenuList>
         {NavMenu.map((menu: INavMenu) => (
           <MenuItem key={menu.id}>
-            <a href="#">{menu.name}</a>
+            <Link to={menu.link || "/"}>{menu.name}</Link>
           </MenuItem>
         ))}
       </MenuList>
@@ -38,5 +39,9 @@ const MenuItem = styled.li`
     color: ${({ theme }) => theme.colors.highlight.secondary};
     font-weight: 700;
     font-size: 17px;
+    &:hover {
+      transition: all ease-in-out 0.2s;
+      color: rgba(51, 51, 51, 0.7);
+    }
   }
 `;

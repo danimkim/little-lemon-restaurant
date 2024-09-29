@@ -1,14 +1,23 @@
 import styled from "@emotion/styled";
 import Logo from "@assets/Logo.svg";
-import Wrapper from "components/Wrapper";
+import Wrapper from "@components/Wrapper";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <HeaderContainer>
       <ContentWrapper>
         <ImageWrapper>
-          <img src={Logo} alt="Little Lemon" />
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="Little Lemon"
+              role="link"
+              tabIndex={0}
+              aria-label="Little Lemon Restaurant Website"
+            />
+          </Link>
         </ImageWrapper>
         <Nav />
       </ContentWrapper>

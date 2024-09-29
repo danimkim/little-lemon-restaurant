@@ -26,8 +26,12 @@
       "@constants": ["constants"],
       "@constants/*": ["constants/*"],
       "@containers/*": ["containers/*/index"],
-      "@assets/*": ["assets/*"]
-    }
+      "@assets/*": ["assets/*"],
+      "@router": ["router"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"]
+    },
+    "esModuleInterop": true
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
 }
