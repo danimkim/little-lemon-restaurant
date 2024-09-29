@@ -39,5 +39,9 @@ const MenuItem = styled.li`
     color: ${({ theme }) => theme.colors.highlight.secondary};
     font-weight: 700;
     font-size: 17px;
+    &:hover {
+      transition: all ease-in-out 0.2s;
+      color: rgba(51, 51, 51, 0.7);
+    }
   }
 `;
