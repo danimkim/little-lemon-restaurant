@@ -2,8 +2,10 @@ import styled from "@emotion/styled";
 import Wrapper from "@components/Wrapper";
 import MainImage from "@assets/restaurant.jpg";
 import Button from "@components/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Section() {
+  const navigate = useNavigate();
   return (
     <Container>
       <ContentWrapper>
@@ -14,7 +16,9 @@ export default function Section() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </Para>
-          <ReserveButton>Reserve a Table</ReserveButton>
+          <ReserveButton onClick={() => navigate("/booking")}>
+            Reserve a Table
+          </ReserveButton>
         </div>
         <Image src={MainImage} alt="Restaurant Food" />
       </ContentWrapper>

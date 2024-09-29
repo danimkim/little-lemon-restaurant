@@ -2,27 +2,29 @@ import styled from "@emotion/styled";
 import Button from "@components/Button";
 import { HighlightCard } from "@components/Highlights";
 import Wrapper from "@components/Wrapper";
-import Img from "@assets/greek-salad.jpg";
+import GreekSaladImg from "@assets/greek-salad.jpg";
+import LemonDessertImg from "@assets/lemon-dessert.png";
+import BruschettaImg from "@assets/brughetta.png";
 
 export default function HighlightsSection() {
   const mockData = [
     {
       title: "Greek Salad",
       desc: "The famous greek salad of crispy lettuce, peppers, olives and Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      imgSrc: Img,
+      imgSrc: GreekSaladImg,
       price: "12.99",
     },
     {
-      title: "Greek Salad",
-      desc: "The famous greek salad of crispy lettuce, peppers, olives and Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      imgSrc: "/",
-      price: "12.99",
+      title: "Bruschetta",
+      desc: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
+      imgSrc: BruschettaImg,
+      price: "5.99",
     },
     {
-      title: "Greek Salad",
-      desc: "The famous greek salad of crispy lettuce, peppers, olives and Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      imgSrc: "/",
-      price: "12.99",
+      title: "Lemon Dessert",
+      desc: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
+      imgSrc: LemonDessertImg,
+      price: "5.00",
     },
   ];
 
