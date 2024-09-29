@@ -25,6 +25,7 @@ interface IColors {
     main: IOrdinalNumbers;
     sub: IOrdinalNumbers;
     highlight: IOrdinalNumbers;
+    warning: IOrdinalNumbers;
   };
 }
 
@@ -38,6 +39,7 @@ export const colors = {
   main: { primary: "#495E57", secondary: "#F4CE14" },
   sub: { primary: "#EE9972", secondary: "#FBDABB", tertiarary: "#EDEBEB" },
   highlight: { primary: "#EDEFEE", secondary: "#333333" },
+  warning: { primary: "#ff5100" },
 };
 
 export const theme: Theme = {
