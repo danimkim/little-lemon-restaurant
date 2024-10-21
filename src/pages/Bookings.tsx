@@ -71,7 +71,7 @@ export default function BookingPage() {
 
   return (
     <Container>
-      <h2>Reserve a table</h2>
+      <h2>Reservations</h2>
       <BookingForm
         onDateChange={handleDateChange}
         availableTimes={state.availableTimes}

@@ -1,7 +1,9 @@
 import Button from "@components/Button";
+import Dropdown from "@components/Dropdown";
 import styled from "@emotion/styled";
 import { useFormik } from "formik";
 import { useCallback } from "react";
+import Arrow from "@assets/arrow-down.svg";
 
 interface IProps {
   availableTimes: string[];
@@ -86,6 +88,15 @@ export default function BookingForm({
 
   return (
     <Form onSubmit={formik.handleSubmit}>
+      <Dropdown.Provider>
+        <Dropdown.Container>
+          <Dropdown.Trigger
+            defaultText={"Occasion"}
+            iconSrc={Arrow}
+          ></Dropdown.Trigger>
+          <Dropdown.List></Dropdown.List>
+        </Dropdown.Container>
+      </Dropdown.Provider>
       <Label htmlFor="res-date">Choose date</Label>
       <input
         type="date"
