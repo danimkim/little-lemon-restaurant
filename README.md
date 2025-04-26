@@ -6,7 +6,20 @@
 <img src="./src/assets/Logo.svg" alt="Little Lemon Restaurant Logo"/>
 </p>
 <br><br>
-Little Lemon Restaurant is a website providing the restaurant's information and a table booking system.
+Little Lemon Restaurant is a modern, single-page application designed to provide users with a seamless experience in exploring restaurant offerings and making table reservations. The project emphasizes clean UI design, form validation, and responsive layouts, aligning with best practices in frontend development.
+
+## Key Features
+- Table Reservation Form: Users can easily book a table through an intuitive form.
+-	Responsive Design: Optimized for various devices, ensuring a consistent user experience.
+-	Form Validation: Implemented using Formik and Yup to ensure data integrity.
+-	Styled Components: Utilized Emotion for modular and maintainable styling.
+-	Type Safety: Leveraged TypeScript for robust and error-resistant code.
+
+## Technologies Used
+- React 18.3.1
+- TypeScript 5.5.3
+- Emotion
+- Formik
 
 ## Demo
 
